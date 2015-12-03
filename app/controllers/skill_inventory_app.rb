@@ -25,6 +25,7 @@ class SkillInventoryApp < Sinatra::Base
   # not_found do
   #   erb :error
   # end
+  
   get '/skills/:id/edit' do |id|
     @skill = SkillInventory.find(id.to_i)
     erb :edit

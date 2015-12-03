@@ -1,25 +1,25 @@
 require_relative '../test_helper'
 
-class UserEditsTask < FeatureTest
+class UserEditsSkill < FeatureTest
 
-  def test_task_is_created_with_valid_attributes
-    TaskManager.create({ title: "traffic spy is scary",
-                         description: "jk"})
-    # As a guest
-    # When I visit the edit task form
-    visit('/tasks/1/edit')
-    # And I fill in a title
-    fill_in('task[title]', :with => 'Exercise')
-    # And I fill in a task
-    fill_in('task[description]', :with => 'Pump the iron')
-    # And I click the submit button
-    click_button('submit')
-    # Then I should be redirected to my edited task
-    assert_equal '/tasks/1', current_path
-    # And I should see my new task
-    within(".show-note") do
-      assert page.has_content?("Exercise")
-      assert page.has_content?("Pump the iron")
-    end
-  end
+  # def test_skill_is_created_with_valid_attributes
+  #   SkillInventory.create({ name: "Guitar",
+  #                        status: "Pretty damn good at it"})
+  #   # As a guest
+  #   # When I visit the edit skill form
+  #   visit('/skills/1/edit')
+  #   # And I fill in a name
+  #   fill_in('skill[name]', :with => 'Singing')
+  #   # And I fill in a skill
+  #   fill_in('skill[status]', :with => 'Not very good')
+  #   # And I click the submit button
+  #   click_button('submit')
+  #   # Then I should be redirected to my edited skill
+  #   assert_equal '/skills/1', current_path
+  #   # And I should see my new skill
+  #   within(".card-content") do
+  #     assert page.has_content?("Singing")
+  #     assert page.has_content?("Not very good")
+  #   end
+  # end
 end

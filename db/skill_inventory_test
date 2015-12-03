@@ -1,12 +1,7 @@
 ---
 skills:
 - id: 1
-  name: Eating
-  status: Pizza
-- id: 2
-  name: coding
-  status: stuff and things
-- id: 3
-  name: calling home a lot
-  status: ''
-total: 3
+  name: 1 name
+  status: 1 status
+total: 1
+tasks: []

@@ -1,18 +1,19 @@
 require_relative '../test_helper'
 
-class UserDeletesTask < FeatureTest
+class UserDeletesSkill < FeatureTest
 
-  def test_task_is_created_with_valid_attributes
-    TaskManager.create({ title: "traffic spy is scary",
-                         description: "jk"})
-    # As a guest
-    # When I visit the task list
-    visit('/tasks')
-    # And I click the delete button
-    click_button('Delete')
-    # Then I should be redirected to my empty task list
-    assert_equal '/tasks', current_path
-    # And I should see my new task
-    refute page.has_content?("traffic spy")
-  end
+  # def test_skill_is_created_with_valid_attributes
+  #   SkillInventory.create({ name: "coding",
+  #                        status: "master"})
+  #   # As a guest
+  #   # When I visit the skill list
+  #   visit('/skills')
+  #   assert page.has_content?("coding")
+  #   # And I click the delete button
+  #   click_button('Delete')
+  #   # Then I should be redirected to my empty skill list
+  #   assert_equal '/skills', current_path
+  #   # And I should see my new skill
+  #   refute page.has_content?("coding")
+  # end
 end
