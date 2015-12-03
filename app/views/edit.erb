@@ -1,0 +1,15 @@
+
+
+<div class="container">
+  <h2>Edit skill Form</h2>
+
+  <div class="text_box">
+    <p>Edit your skill:</p>
+    <form action="/skills/<%= @skill.id %>" method="post">
+      <input type="hidden" name="_method" value="put">
+      <p>Title: </p><input type='text' name='skill[name]' value="<%= @skill.name %>"/><br/>
+      <p>skill: </p><textarea class="form-control" rows="3" name='skill[status]'><%= @skill.status %></textarea><br/>
+      <input type='submit'/>
+    </form>
+  </div>
+</div>

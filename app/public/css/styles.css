@@ -1,0 +1,21 @@
+body, html {
+  background-image: url('/paper.jpg');
+  text-align: center;
+  font-family: 'Indie Flower', "Open Sans", "Helvetica Neue";
+  font-size: 110%;
+}
+
+h1 {
+  color: white;
+  background-color: black;
+  opacity: .3;
+  padding: 10px;
+  width: 100%;
+}
+
+li {
+  width: 15%;
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.3);
+
+}

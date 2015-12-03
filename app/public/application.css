@@ -1,0 +1,111 @@
+body, html {
+  background-color: teal;
+  text-align: center;
+  font-family: 'Exo', "Open Sans", "Helvetica Neue";
+  font-size: 110%;
+}
+
+/*NAV*/
+nav {
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.68);
+}
+.side-nav {
+    position: fixed;
+    left: -105%;
+    top: 0;
+    margin-top: 65px;
+    height: 100%;
+    height: calc(100% + 60px);
+    height: -moz-calc(100%);
+    padding-bottom: 60px;
+    background-color: rgba(247, 247, 247, 0.57);
+    z-index: 999;
+    overflow-y: auto;
+    will-change: left;
+}
+.side-nav a {
+    color: white;
+    display: block;
+    font-size: 1rem;
+    height: 64px;
+    line-height: 64px;
+    padding: 0 15px;
+}
+.side-nav li {
+    display: flex;
+    float: none;
+    padding: 0 80px;
+}
+
+
+p {
+  text-align: center;
+}
+html {
+    line-height: .5;
+}
+h4 {
+    line-height: 60%;
+}
+h5 {
+  padding-top: 20px;
+}
+
+
+textarea {
+    width: 100%;
+    height: 3rem;
+    background-color: rgb(150, 202, 180);
+}
+
+input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea.materialize-textarea {
+    background-color: rgb(150, 202, 180);
+}
+.edit {
+  background-color: blue;
+}
+.delete {
+  background-color: red;
+  margin-top: 10px;
+}
+.skill:hover {
+  background-color: white;
+  color: red;
+}
+
+.row .col.m6 {
+    width: 100%;
+    margin-left: 0;
+}
+.card .card-action {
+    display: initial;
+    border-top: 1px solid rgba(52, 14, 117, 0.2);
+    padding: 10px;
+}
+.container .row {
+    max-width: 300px;
+    display: inline-block;
+}
+
+/*SKILL VIEW*/
+.skill_view{
+  min-width: 50%;
+}
+.card .card-content .card-title {
+    line-height: 60px;
+}
+.card .card-title {
+    font-size: 1.3em;
+    font-weight: 300;
+}
+.card .card-action {
+    display: block;
+    border-top: 3px solid cadetblue;
+    padding: 10px;
+}
+.card .card-content p {
+    font-size: .9em;
+    margin: 0;
+    color: inherit;
+}
