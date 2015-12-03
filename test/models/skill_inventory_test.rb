@@ -11,27 +11,25 @@ class SkillInventoryTest < Minitest::Test
 
   def test_skill_can_be_created
     create_skills(1)
-    skill = SkillInventory.find(1)
+
+    skill = SkillInventory.all.last
 
     assert_equal "1 name", skill.name
     assert_equal "1 status", skill.status
-    assert_equal 1, skill.id
+    assert_equal SkillInventory.all.first.id, skill.id
   end
-  #
+
   # def test_it_finds_all_skills
-  #   skills = [{ name: "traffic spy is scary", status: "one"},
-  #            { name: "traffic spy is hard", status: "two"},
-  #            { name: "traffic spy is huuuge", status: "three"}]
-  #   skills.each { |skill| SkillInventory.create(skill)}
+  #   create_skills(3)
   #
   #   assert_equal 3, SkillInventory.all.count
   #   SkillInventory.all.each_with_index do |skill, i|
-  #     assert_equal skill, skill.class
-  #     assert_equal skill.name, skills[i][:name]
-  #     assert_equal skill.status, skills[i][:status]
+  #     assert_equal Skill, skill.class
+  #     assert_equal "#{i+1} name", skill.name
+  #     assert_equal "#{i+1} status", skill.status
   #   end
   # end
-  #
+
   # def test_it_can_find_data
   #   skills = [{ name: "traffic spy is scary", status: "one"},
   #            { name: "traffic spy is hard", status: "two"},

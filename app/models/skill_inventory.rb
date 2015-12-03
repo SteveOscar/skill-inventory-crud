@@ -26,6 +26,7 @@ class SkillInventory
     end
 
     def self.all
+      raw_skills = database.from(:skills).to_a
       raw_skills.map { |data| Skill.new(data) }
     end
 
@@ -34,6 +35,7 @@ class SkillInventory
     # end
 
     def self.find(id)
+      binding.pry
       data = database.from(:skills).where(id: id).to_a.first
       Skill.new(data)
     end
