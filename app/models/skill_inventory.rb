@@ -35,12 +35,12 @@ class SkillInventory
     # end
 
     def self.find(id)
-      binding.pry
       data = database.from(:skills).where(id: id).to_a.first
       Skill.new(data)
     end
 
     def self.update(id, data)
+      database.from(:skills).where(id: id).update(data)
       # database.transaction do
       #   target = database['skills'].find { |data| data["id"] == id }
       #   target["name"] = data[:name]
@@ -49,9 +49,7 @@ class SkillInventory
     end
 
     def self.delete(id)
-      database.transaction do
-        database['skills'].delete_if { |skill| skill["id"] == id }
-      end
+      database.from(:skills).where(id: id).delete
     end
 
     def self.delete_all
