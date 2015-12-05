@@ -11,12 +11,6 @@ class SkillInventory
 
     def self.create(skill)
       database.from(:skills).insert(name: skill[:name], status: skill[:status])
-      # database.transaction do
-      #   database['skills'] ||= []
-      #   database['total'] ||= 0
-      #   database['total'] += 1
-      #   database['skills'] << { "id" => database['total'], "name" => skill[:name], "status" => skill[:status] }
-      # end
     end
 
     def self.raw_skills
@@ -30,10 +24,6 @@ class SkillInventory
       raw_skills.map { |data| Skill.new(data) }
     end
 
-    # def self.raw_skill(id)
-    #   raw_skills.find { |skill| skill["id"] == id }
-    # end
-
     def self.find(id)
       data = database.from(:skills).where(id: id).to_a.first
       Skill.new(data)
@@ -41,11 +31,6 @@ class SkillInventory
 
     def self.update(id, data)
       database.from(:skills).where(id: id).update(data)
-      # database.transaction do
-      #   target = database['skills'].find { |data| data["id"] == id }
-      #   target["name"] = data[:name]
-      #   target["status"] = data[:status]
-      # end
     end
 
     def self.delete(id)

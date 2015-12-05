@@ -1,6 +1,6 @@
 class SkillInventoryApp < Sinatra::Base
   get '/' do
-    erb :dashboard
+    haml :dashboard
   end
 
   get '/skills' do
@@ -25,7 +25,7 @@ class SkillInventoryApp < Sinatra::Base
   # not_found do
   #   erb :error
   # end
-  
+
   get '/skills/:id/edit' do |id|
     @skill = SkillInventory.find(id.to_i)
     erb :edit
