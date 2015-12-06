@@ -5,11 +5,15 @@ class SkillInventoryApp < Sinatra::Base
 
   get '/skills' do
     @skills = SkillInventory.all
-    erb :index
+    haml :index
+  end
+
+  get '/bonus' do
+    haml :bonus
   end
 
   get '/skills/new' do
-    erb :new
+    haml :new
   end
 
   post '/skills' do
@@ -19,7 +23,7 @@ class SkillInventoryApp < Sinatra::Base
 
   get '/skills/:id' do |id|
     @skill = SkillInventory.find(id.to_i)
-    erb :show
+    haml :show
   end
 
   # not_found do
@@ -28,7 +32,7 @@ class SkillInventoryApp < Sinatra::Base
 
   get '/skills/:id/edit' do |id|
     @skill = SkillInventory.find(id.to_i)
-    erb :edit
+    haml :edit
   end
 
   put '/skills/:id' do |id|
@@ -41,4 +45,10 @@ class SkillInventoryApp < Sinatra::Base
     redirect "/skills"
   end
 
+  # post '/save_image' do
+  #   tempfile = params['file'][:tempfile]
+  #   filename = params['file'][:filename]
+  #   File.copy(tempfile.path, "./files/#{filename}")
+  #   redirect '/'
+  # end
 end

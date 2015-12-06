@@ -1,0 +1,84 @@
+
+%html
+  %head
+    %link{:href => "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css", :rel => "stylesheet"}
+      %link{:href => "/application.css", :rel => "stylesheet"}
+        %link{:href => "https://fonts.googleapis.com/icon?family=Material+Icons", :rel => "stylesheet"}
+          %link{:href => "https://fonts.googleapis.com/css?family=Exo", :rel => "stylesheet", :type => "text/css"}
+            %title Skill Inventory
+  %body
+    %nav
+      .nav-wrapper
+        %a.brand-logo.right{:href => "#"}
+          %i.orange-text.material-icons.left> rowing
+          s<span class="orange-text">K</span>ills
+        %a.button-collapse{"data-activates" => "mobile-demo", :href => "#"}
+          %i.material-icons menu
+        %ul#nav-mobile.left.hide-on-med-and-down
+          %li
+            %a{:href => "/"}
+              %i.material-icons.orange-text home
+          %li
+            %a{:href => "/skills"}
+              %i.material-icons.orange-text apps
+          %li
+            %a{:href => "/skills/new"}
+              %i.material-icons.orange-text add circle
+        %ul#mobile-demo.side-nav
+          %li
+            %a{:href => "/"}
+              %i.material-icons home
+          %li
+            %a{:href => "/skills"}
+              %i.material-icons apps
+          %li
+            %a{:href => "/skills/new"}
+              %i.material-icons add circle
+    = yield
+    .container.footer.white-text
+      = haml :footer
+    %script{:src => "https://code.jquery.com/jquery-2.1.1.min.js", :type => "text/javascript"}
+    %script{:src => "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js", :type => "text/javascript"}
+    :javascript
+      $( document ).ready(function(){
+        $(".button-collapse").sideNav();
+      });
+
+-# <!-- <!DOCTYPE html>
+-# <html>
+-# <head>
+-#   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/css/materialize.min.css">
+-#   <link rel="stylesheet" href="/application.css">
+-#   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+-#   <link href='https://fonts.googleapis.com/css?family=Exo' rel='stylesheet' type='text/css'>
+-#   <title>Skill Inventory</title>
+-# </head>
+-# <body>
+-#
+-#   <nav>
+-#     <div class="nav-wrapper">
+-#       <a href="#" class="brand-logo right"><i class="teal-text material-icons left">rowing</i>sKills</a>
+-#       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+-#       <ul id="nav-mobile" class="left hide-on-med-and-down">
+-#         <li><a href="/"><i class="material-icons">home</i></a></li>
+-#         <li><a href="/skills"><i class="material-icons">apps</i></a></li>
+-#         <li><a href="/skills/new"><i class="material-icons">add circle</i></a></li>
+-#       </ul>
+-#       <ul class="side-nav" id="mobile-demo">
+-#         <li><a href="/"><i class="material-icons">home</i></a></li>
+-#         <li><a href="/skills"><i class="material-icons">apps</i></a></li>
+-#         <li><a href="/skills/new"><i class="material-icons">add circle</i></a></li>
+-#       </ul>
+-#     </div>
+-#   </nav>
+-#
+-#   <%= yield %>
+-#   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+-#   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+-#   <script type="text/javascript">
+-#      $( document ).ready(function(){
+-#        $(".button-collapse").sideNav();
+-#      });
+-#    </script>
+-# </body>
+-# </html> -->

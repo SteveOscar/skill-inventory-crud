@@ -1,0 +1,32 @@
+-# <div class="container">
+-#   <h4 class="white-text">New Skill Form</h4>
+-#   <div class="text_box">
+-#     <p>Enter a new skill for the list:</p>
+-#
+-#     <form action="/skills" method="post">
+-#       <p>name: </p><input type='text' name='skill[name]'/><br/>
+-#       <p>skill: </p><textarea class="form-control" rows="3" name='skill[status]'></textarea><br/>
+-#       <input class="waves-effect waves-light btn" value='submit' type='submit'/><br/>
+-#       <i class="material-icons right">send</i>
+-#     </form>
+-#
+-#   </div>
+-# </div>
+
+.container
+  %h4.white-text New Skill Form
+  .text_box
+    %p Enter a new skill for your list:
+    %form{:action => "/skills", :method => "post"}
+      %p name:
+      %input{:name => "skill[name]", :type => "text"}
+      %br/
+      %p skill:
+      %textarea.form-control{:name => "skill[status]", :rows => "3"}
+      %br/
+      %input.waves-effect.waves-light.btn{:value => "submit", :type => "submit"}
+        %i.material-icons send
+      -# %br/
+      -# %form.container.image_upload_form{:action => "/skills/save_image", :method => "post"}
+      -#   %input{:accept => "image/*", :name => "file", :type => "file"}
+      -#   %input{:type => "submit", :value => "upload image"}
