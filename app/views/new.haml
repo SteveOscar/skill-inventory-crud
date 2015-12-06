@@ -24,8 +24,11 @@
       %p skill:
       %textarea.form-control{:name => "skill[status]", :rows => "3"}
       %br/
-      %input.waves-effect.waves-light.btn{:value => "submit", :type => "submit"}
-        %i.material-icons send
+      %i.waves-effect.waves-light.btn.waves-input-wrapper{:style => ""}
+        %i.material-icons.orange-text send
+        %input.waves-button-input{:type => "submit", :value => "submit"}/
+
+
       -# %br/
       -# %form.container.image_upload_form{:action => "/skills/save_image", :method => "post"}
       -#   %input{:accept => "image/*", :name => "file", :type => "file"}
